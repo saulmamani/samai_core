@@ -22,9 +22,14 @@ class UserContoller
     {
         return User::create($request);
     }
+
+    public function update($request, $id)
+    {
+        return User::update($request, $id);
+    }
 }
 
 $obj = new UserContoller();
-$obj->store(['role'=>'Admistrator', 'name' => 'Sarai Cabrera', 'email' => 'sarai@samai.com', 'password' => '123456']);
-$res = $obj->get();
+$res = $obj->update(['role'=>'Admistrator', 'name' => 'Sarai Cabrera', 'email' => 'sarai@samai.com', 'password' => '123456'], 1);
+//$res = $obj->get();
 print_r($res);
