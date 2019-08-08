@@ -26,9 +26,19 @@ trait Model
         return str_replace("'null'", "null", $str_values);
     }
 
+    protected static function get_values_update($request)
+    {
+        $values = [];
+        foreach (self::$columns as $key => $value) {
+            if(array_key_exists($value, $request))
+                $values[] = $value . " = '". $request[$value]. "'";
+        }
+        return implode(", ", $values);
+    }
+
     public static function all()
     {
-        $sql = sprintf("select * from %s", self::$table);
+        $sql = sprintf("SELECT * FROM %s", self::$table);
         $result = self::execute_query($sql);
 
         $data = array();
@@ -40,13 +50,14 @@ trait Model
 
     public static function find($id)
     {
-        $sql = sprintf("select * from %s where id = %d limit 1", self::$table, $id);
+        $sql = sprintf("SELECT * FROM %s where id = %d LIMIT 1", self::$table, $id);
         return self::execute_query($sql)->fetch_object();
     }
 
     public static function create($request)
     {
-        $sql = sprintf("insert into %s (%s) values (%s)", self::$table,
+        $sql = sprintf("INSERT INTO %s (%s) VALUES (%s)",
+            self::$table,
             self::get_columns(),
             self::get_values($request));
         return self::execute_query($sql);
@@ -54,8 +65,12 @@ trait Model
 
     public static function update($request, $id)
     {
-        $sql = sprintf("update  set %s from %s where id = %d", self::$table, self::get_values($request), $id);
-        return $sql;
+
+        $sql = sprintf("UPDATE %s SET %s WHERE id = %d",
+            self::$table,
+            self::get_values_update($request),
+            $id);
+        return self::execute_query($sql);
     }
 
     public static function remove($id)

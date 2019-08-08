@@ -30,6 +30,7 @@ class UserContoller
 }
 
 $obj = new UserContoller();
-$res = $obj->update(['role'=>'Admistrator', 'name' => 'Sarai Cabrera', 'email' => 'sarai@samai.com', 'password' => '123456'], 1);
-//$res = $obj->get();
+//$obj->store(['role'=>'Admistrator', 'name' => 'Sarai Cabrera', 'email' => 'sarai@samai.com', 'password' => '123456', 'saul' => 'saul']);
+$obj->update(['role'=>'Admistrator', 'otro' => 'otro'], 1);
+$res = $obj->get();
 print_r($res);
