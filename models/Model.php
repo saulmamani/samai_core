@@ -16,7 +16,7 @@ trait Model
         return implode(", ", self::$columns);
     }
 
-    protected static function get_values($request)
+    protected static function get_values(array $request)
     {
         $values = [];
         foreach (self::$columns as $key => $value) {
@@ -26,7 +26,7 @@ trait Model
         return str_replace("'null'", "null", $str_values);
     }
 
-    protected static function get_values_update($request)
+    protected static function get_values_update(array $request)
     {
         $values = [];
         foreach (self::$columns as $key => $value) {
@@ -36,16 +36,44 @@ trait Model
         return implode(", ", $values);
     }
 
-    public static function all()
+    /**
+     * @param mysqli_result $result
+     * @return array
+     */
+    private static function convert_to_object(mysqli_result $result)
     {
-        $sql = sprintf("SELECT * FROM %s", self::$table);
-        $result = self::execute_query($sql);
-
         $data = array();
         while ($row = $result->fetch_object()) {
             $data[] = $row;
         }
         return $data;
+    }
+
+    public static function all()
+    {
+        $sql = sprintf("SELECT * FROM %s", self::$table);
+        $result = self::execute_query($sql);
+
+        return self::convert_to_object($result);
+    }
+
+    public static function where($conditions)
+    {
+        $sql = sprintf("SELECT * FROM %s WHERE %s", self::$table, $conditions);
+        $result = self::execute_query($sql);
+        return self::convert_to_object($result);
+    }
+
+    public static function select(array $columns, $conditions = "")
+    {
+        if(empty($conditions))
+            $sql = sprintf("SELECT %s FROM %s", implode(", ", $columns), self::$table);
+        else
+            $sql = sprintf("SELECT %s FROM %s WHERE %s", implode(", ", $columns), self::$table, $conditions);
+
+        $result = self::execute_query($sql);
+
+        return self::convert_to_object($result);
     }
 
     public static function find($id)
@@ -54,7 +82,7 @@ trait Model
         return self::execute_query($sql)->fetch_object();
     }
 
-    public static function create($request)
+    public static function create(array $request)
     {
         $sql = sprintf("INSERT INTO %s (%s) VALUES (%s)",
             self::$table,
@@ -63,9 +91,8 @@ trait Model
         return self::execute_query($sql);
     }
 
-    public static function update($request, $id)
+    public static function update(array $request, $id)
     {
-
         $sql = sprintf("UPDATE %s SET %s WHERE id = %d",
             self::$table,
             self::get_values_update($request),
@@ -76,6 +103,12 @@ trait Model
     public static function remove($id)
     {
         $sql = sprintf("delete from %s where id = %d", self::$table, $id);
+        return self::execute_query($sql);
+    }
+
+    public static function query($sql)
+    {
+        $sql = sprintf($sql);
         return self::execute_query($sql);
     }
 }

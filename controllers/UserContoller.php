@@ -27,10 +27,27 @@ class UserContoller
     {
         return User::update($request, $id);
     }
+
+    public function get_administrator()
+    {
+        return User::where("role = 'Administrator' and name = 'saul'");
+    }
+
+    public function consulta($query)
+    {
+        return User::query($query);
+    }
+
+    public function solo_columnas()
+    {
+        return User::select(['name', 'role'], "role = 'Seller'");
+    }
 }
 
 $obj = new UserContoller();
 //$obj->store(['role'=>'Admistrator', 'name' => 'Sarai Cabrera', 'email' => 'sarai@samai.com', 'password' => '123456', 'saul' => 'saul']);
 $obj->update(['role'=>'Admistrator', 'otro' => 'otro'], 1);
-$res = $obj->get();
+//$res = $obj->get_administrator();
+//$res = $obj->consulta("select name from user")->fetch_all();
+$res = $obj->solo_columnas();
 print_r($res);
