@@ -1,53 +1,8 @@
 <?php
 
-trait Model
+trait Query
 {
-    protected static function execute_query($sql)
-    {
-        $conexion = Conexion::connect();
-        $result = $conexion->query($sql);
-        Conexion::disconnect($conexion);
-
-        return $result;
-    }
-
-    protected static function get_columns()
-    {
-        return implode(", ", self::$columns);
-    }
-
-    protected static function get_values(array $request)
-    {
-        $values = [];
-        foreach (self::$columns as $key => $value) {
-            $values[$value] = array_key_exists($value, $request) ? $request[$value] : 'null';
-        }
-        $str_values = "'" . implode("', '", $values) . "'";
-        return str_replace("'null'", "null", $str_values);
-    }
-
-    protected static function get_values_update(array $request)
-    {
-        $values = [];
-        foreach (self::$columns as $key => $value) {
-            if(array_key_exists($value, $request))
-                $values[] = $value . " = '". $request[$value]. "'";
-        }
-        return implode(", ", $values);
-    }
-
-    /**
-     * @param mysqli_result $result
-     * @return array
-     */
-    private static function convert_to_object(mysqli_result $result)
-    {
-        $data = array();
-        while ($row = $result->fetch_object()) {
-            $data[] = $row;
-        }
-        return $data;
-    }
+    use HasAttribute;
 
     public static function all()
     {
@@ -106,7 +61,7 @@ trait Model
         return self::execute_query($sql);
     }
 
-    public static function query($sql)
+    public static function Query($sql)
     {
         $sql = sprintf($sql);
         return self::execute_query($sql);

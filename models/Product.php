@@ -1,10 +1,8 @@
 <?php
 
 
-class Product
+class Product extends Model
 {
-    use Model;
-
     public static $table = 'product';
 
     public static $columns = [

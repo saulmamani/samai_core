@@ -1,22 +1,13 @@
 <?php
 
-class Conexion
+
+abstract class Conexion
 {
-    public static function connect()
-    {
-        $server = "localhost";
-        $data_base = "ctrfoodDB";
-        $user = "root";
-        $password = "root";
+    const Driver = "mysql";
+    const Port = "3306";
 
-        $cad_con = new mysqli($server, $user, $password);
-        $cad_con->select_db($data_base);
-
-        return $cad_con;
-    }
-
-    public static function disconnect($cad_con)
-    {
-        mysqli_close($cad_con);
-    }
+    const Server = "localhost";
+    const DataBase = "ctrfoodDB";
+    const User = "root";
+    const Password = "root";
 }

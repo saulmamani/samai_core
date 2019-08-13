@@ -1,8 +1,8 @@
 <?php
 
-class User
+class User extends Model
 {
-    use Model;
+    use Query;
 
     public static $table = "user";
 

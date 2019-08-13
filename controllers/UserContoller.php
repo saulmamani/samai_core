@@ -3,7 +3,9 @@ ini_set('display_errors', '1');
 ini_set('error_reporting', E_ALL);
 
 include "../config/Conexion.php";
-include "../models/Model.php";
+include "../core/HasAttribute.php";
+include "../core/Query.php";
+include "../core/Model.php";
 include "../models/User.php";
 
 class UserContoller
@@ -35,7 +37,7 @@ class UserContoller
 
     public function consulta($query)
     {
-        return User::query($query);
+        return User::Query($query);
     }
 
     public function solo_columnas()
@@ -46,7 +48,7 @@ class UserContoller
 
 $obj = new UserContoller();
 //$obj->store(['role'=>'Admistrator', 'name' => 'Sarai Cabrera', 'email' => 'sarai@samai.com', 'password' => '123456', 'saul' => 'saul']);
-$obj->update(['role'=>'Admistrator', 'otro' => 'otro'], 1);
+//$obj->update(['role'=>'Admistrator', 'otro' => 'otro'], 1);
 //$res = $obj->get_administrator();
 //$res = $obj->consulta("select name from user")->fetch_all();
 $res = $obj->solo_columnas();
