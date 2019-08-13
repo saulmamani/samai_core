@@ -1,14 +1,8 @@
 <?php
-ini_set('display_errors', '1');
-ini_set('error_reporting', E_ALL);
 
-include "../config/Conexion.php";
-include "../core/HasAttribute.php";
-include "../core/Query.php";
-include "../core/Model.php";
-include "../models/User.php";
+include "../config/App.php";
 
-class UserContoller
+class UserContoller extends BaseController
 {
     public function get()
     {
@@ -51,5 +45,5 @@ $obj = new UserContoller();
 //$obj->update(['role'=>'Admistrator', 'otro' => 'otro'], 1);
 //$res = $obj->get_administrator();
 //$res = $obj->consulta("select name from user")->fetch_all();
-$res = $obj->solo_columnas();
+$res = $obj->get();
 print_r($res);

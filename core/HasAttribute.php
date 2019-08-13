@@ -2,12 +2,12 @@
 
 trait HasAttribute
 {
-    public static function get_columns()
+    protected static function get_columns()
     {
         return implode(", ", self::$columns);
     }
 
-    public static function get_values(array $request)
+    protected static function get_values(array $request)
     {
         $values = [];
         foreach (self::$columns as $key => $value) {
@@ -17,7 +17,7 @@ trait HasAttribute
         return str_replace("'null'", "null", $str_values);
     }
 
-    public static function get_values_update(array $request)
+    protected static function get_values_update(array $request)
     {
         $values = [];
         foreach (self::$columns as $key => $value) {
@@ -26,5 +26,4 @@ trait HasAttribute
         }
         return implode(", ", $values);
     }
-
 }
