@@ -31,7 +31,7 @@ class UserContoller extends BaseController
 
     public function consulta($query)
     {
-        return User::Query($query);
+        return User::query($query);
     }
 
     public function solo_columnas()

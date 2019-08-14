@@ -16,12 +16,13 @@ trait Query
     {
         $sql = sprintf("SELECT * FROM %s WHERE %s", self::$table, $conditions);
         $result = self::execute_query($sql);
+
         return self::convert_to_object($result);
     }
 
     public static function select(array $columns, $conditions = "")
     {
-        if(empty($conditions))
+        if (empty($conditions))
             $sql = sprintf("SELECT %s FROM %s", implode(", ", $columns), self::$table);
         else
             $sql = sprintf("SELECT %s FROM %s WHERE %s", implode(", ", $columns), self::$table, $conditions);
@@ -61,7 +62,7 @@ trait Query
         return self::execute_query($sql);
     }
 
-    public static function Query($sql)
+    public static function query($sql)
     {
         $sql = sprintf($sql);
         return self::execute_query($sql);

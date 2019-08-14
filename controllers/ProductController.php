@@ -1,13 +1,8 @@
 <?php
-ini_set('display_errors', '1');
-ini_set('error_reporting', E_ALL);
-error_reporting(E_ALL);
 
-include "../config/Conexion.php";
-include "../models/Model.php";
-include "../models/Product.php";
+include "../config/App.php";
 
-class ProductController
+class ProductController extends BaseController
 {
     public function get()
     {

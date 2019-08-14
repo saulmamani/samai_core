@@ -8,9 +8,10 @@ abstract class Model
         $data_base = Conexion::DataBase;
         $user = Conexion::User;
         $password = Conexion::Password;
+        $port = Conexion::Port;
 
-        $cad_con = new mysqli($server, $user, $password);
-        $cad_con->select_db($data_base);
+        $cad_con = new mysqli($server, $user, $password, $data_base, $port)
+                    or die ("Error de conexion a la base de datos, revise sus credenciales");
 
         return $cad_con;
     }

@@ -7,5 +7,7 @@ include "../config/Conexion.php";
 include "../core/HasAttribute.php";
 include "../core/Query.php";
 include "../core/Model.php";
-include "../models/User.php";
+
 include "../core/BaseController.php";
+include "../models/User.php";
+include "../models/Product.php";
