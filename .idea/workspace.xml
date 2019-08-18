@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7a4a5be7-96ca-406f-89c5-7b45887f4c66" name="Default Changelist" comment="" />
+    <list default="true" id="7a4a5be7-96ca-406f-89c5-7b45887f4c66" name="Default Changelist" comment="update method core, not finish">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,20 +17,34 @@
       <executable />
     </execution>
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="PhpServers">
     <servers>
       <server host="localhost" id="a710dcc8-2ba8-4532-b711-dd6a83511a04" name="localhost" />
     </servers>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="294" />
-    <option name="y" value="53" />
-    <option name="width" value="1400" />
-    <option name="height" value="1000" />
-  </component>
   <component name="ProjectId" id="1P7J4gl0X6OLLjRtaRCHcZBEMp3" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/core" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -37,6 +55,12 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/views" />
+      <recent name="$PROJECT_DIR$/core" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -66,11 +90,86 @@
       <option name="presentableId" value="Default" />
       <updated>1565144775202</updated>
       <workItem from="1565144776491" duration="12127000" />
-      <workItem from="1565219023760" duration="4807000" />
+      <workItem from="1565219023760" duration="4962000" />
+      <workItem from="1565243930097" duration="170000" />
+      <workItem from="1565244116923" duration="49000" />
+      <workItem from="1565246010156" duration="629000" />
+      <workItem from="1565306396450" duration="6225000" />
+      <workItem from="1565359338745" duration="622000" />
+      <workItem from="1565710077605" duration="1283000" />
+      <workItem from="1565711535888" duration="7672000" />
+      <workItem from="1565752861626" duration="2855000" />
+      <workItem from="1565787755153" duration="1021000" />
+      <workItem from="1566089581336" duration="2239000" />
     </task>
+    <task id="LOCAL-00001" summary="update method core, not finish">
+      <created>1565246629455</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1565246629455</updated>
+    </task>
+    <task id="LOCAL-00002" summary="update method core,  finish">
+      <created>1565307910469</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1565307910469</updated>
+    </task>
+    <task id="LOCAL-00003" summary="where, update, select methods adds">
+      <created>1565312613297</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1565312613297</updated>
+    </task>
+    <task id="LOCAL-00004" summary="folder core create, refactor Model, Query and HasAttribute">
+      <created>1565722375308</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1565722375308</updated>
+    </task>
+    <task id="LOCAL-00005" summary="adding include file">
+      <created>1565724011435</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1565724011435</updated>
+    </task>
+    <task id="LOCAL-00006" summary="refactor class">
+      <created>1565789358565</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1565789358565</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update method core, not finish" />
+    <MESSAGE value="update method core,  finish" />
+    <MESSAGE value="where, update, select methods adds" />
+    <MESSAGE value="folder core create, refactor Model, Query and HasAttribute" />
+    <MESSAGE value="adding include file" />
+    <MESSAGE value="refactor class" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor class" />
   </component>
 </project>
