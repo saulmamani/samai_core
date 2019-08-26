@@ -1,15 +1,14 @@
 <?php
 
-include "../config/App.php";
-
-class UserContoller extends BaseController
+class UserContoller
 {
-    public function get()
+    public function toList()
     {
-        return User::all();
+        $users = User::all();
+        return Response::view('users/index.php', ['users' => $users]);
     }
 
-    public function show($id)
+    public function getOne($id)
     {
         return User::find($id);
     }
@@ -24,26 +23,31 @@ class UserContoller extends BaseController
         return User::update($request, $id);
     }
 
-    public function get_administrator()
+    public function destroy($id)
     {
-        return User::where("role = 'Administrator' and name = 'saul'");
+        return User::remove($id);
     }
 
-    public function consulta($query)
-    {
-        return User::query($query);
-    }
-
-    public function solo_columnas()
-    {
-        return User::select(['name', 'role'], "role = 'Seller'");
-    }
+//    public function get_administrator()
+//    {
+//        return User::where("role = 'Administrator' and name = 'saul'");
+//    }
+//
+//    public function consulta($query)
+//    {
+//        return User::query($query);
+//    }
+//
+//    public function solo_columnas()
+//    {
+//        return User::select(['name', 'role'], "role = 'Seller'");
+//    }
 }
 
-$obj = new UserContoller();
-//$obj->store(['role'=>'Admistrator', 'name' => 'Sarai Cabrera', 'email' => 'sarai@samai.com', 'password' => '123456', 'saul' => 'saul']);
-//$obj->update(['role'=>'Admistrator', 'otro' => 'otro'], 1);
-//$res = $obj->get_administrator();
-//$res = $obj->consulta("select name from user")->fetch_all();
-$res = $obj->get();
-print_r($res);
+//$obj = new UserContoller();
+////$obj->store(['role'=>'Admistrator', 'name' => 'Sarai Cabrera', 'email' => 'sarai@samai.com', 'password' => '123456', 'saul' => 'saul']);
+////$obj->update(['role'=>'Admistrator', 'otro' => 'otro'], 1);
+////$res = $obj->get_administrator();
+////$res = $obj->consulta("select name from user")->fetch_all();
+//$res = $obj->get();
+//print_r($res);

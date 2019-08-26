@@ -2,9 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a4a5be7-96ca-406f-89c5-7b45887f4c66" name="Default Changelist" comment="update method core, not finish">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/includes.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/route.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/DetailController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/SaleController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/Response.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/Detail.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/Sale.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/404.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/producs/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/users/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/App.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/UserContoller.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/UserContoller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/BaseController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,10 +41,38 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="ctrfoodDB@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="ctrfoodDB@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="ctrfoodDB@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="ctrfoodDB: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="ctrfoodDB@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="ctrfoodDB: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="detail: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpServers">
@@ -42,6 +83,7 @@
   <component name="ProjectId" id="1P7J4gl0X6OLLjRtaRCHcZBEMp3" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/core" />
@@ -54,6 +96,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
@@ -79,6 +122,16 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand />
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -100,7 +153,8 @@
       <workItem from="1565711535888" duration="7672000" />
       <workItem from="1565752861626" duration="2855000" />
       <workItem from="1565787755153" duration="1021000" />
-      <workItem from="1566089581336" duration="2239000" />
+      <workItem from="1566089581336" duration="10181000" />
+      <workItem from="1566769334085" duration="8271000" />
     </task>
     <task id="LOCAL-00001" summary="update method core, not finish">
       <created>1565246629455</created>
