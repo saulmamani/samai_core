@@ -1,6 +1,6 @@
 <?php
 
-class UserContoller
+class UserController
 {
     public function toList()
     {
@@ -44,7 +44,7 @@ class UserContoller
 //    }
 }
 
-//$obj = new UserContoller();
+//$obj = new UserController();
 ////$obj->store(['role'=>'Admistrator', 'name' => 'Sarai Cabrera', 'email' => 'sarai@samai.com', 'password' => '123456', 'saul' => 'saul']);
 ////$obj->update(['role'=>'Admistrator', 'otro' => 'otro'], 1);
 ////$res = $obj->get_administrator();

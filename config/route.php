@@ -1,24 +1,36 @@
 <?php
 
-function redirect($url){
-?>
-
-    <iframe src='<?php echo "views/" . $url ?>' width="100%" height="100%" frameborder="0"></iframe>
-
-<?php
-}
-
 $server = $_SERVER["HTTP_HOST"];
 $document = $_SERVER["DOCUMENT_ROOT"];
 
-$pag = isset($_GET['pag']) ? $_GET['pag'] : 'error';
+$rute = isset($_GET['rute']) ? $_GET['rute'] : 'error';
 
-switch ($pag) {
+$params = [];
+$url= explode("/", $rute)[0];
+$params= explode("/", $rute);
+
+function open($ruta, $action)
+{
+    $class = explode("@", $action)[0];
+    $method = explode("@", $action)[1];
+
+    $str = sprintf("(new %s())->%s();", $class, $method);
+    echo $str;
+   eval($str);
+
+//    (new UserController())->toList();
+
+//    eval("$obj = new " . $class . "()");
+//    eval("$obj->". $method . "()");
+}
+
+switch ($url) {
     case 'users' :
-        $users = new UserContoller();
+        /*$users = new UserController();
         //redirect("users");
         //include ("views/users/index.php");
-        $users->toList();
+        $users->toList();*/
+        open('users', 'UserController@toList');
         break;
     case 'products' :
         $products = new ProductController();

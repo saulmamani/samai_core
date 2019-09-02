@@ -13,7 +13,7 @@ include "models/Product.php";
 include "models/Sale.php";
 include "models/Detail.php";
 
-include "controllers/UserContoller.php";
+include "controllers/UserController.php";
 include "controllers/ProductController.php";
 
 
