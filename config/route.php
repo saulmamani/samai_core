@@ -16,7 +16,7 @@ function open($ruta, $action)
 
     $str = sprintf("(new %s())->%s();", $class, $method);
     echo $str;
-   eval($str);
+    eval($str);
 
 //    (new UserController())->toList();
 

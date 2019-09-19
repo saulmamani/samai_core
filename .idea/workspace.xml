@@ -2,22 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a4a5be7-96ca-406f-89c5-7b45887f4c66" name="Default Changelist" comment="update method core, not finish">
-      <change afterPath="$PROJECT_DIR$/config/includes.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/route.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/DetailController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/SaleController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/Response.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/Detail.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/Sale.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/404.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/producs/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/users/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/App.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/UserContoller.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/UserContoller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/BaseController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/route.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/route.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -154,7 +140,9 @@
       <workItem from="1565752861626" duration="2855000" />
       <workItem from="1565787755153" duration="1021000" />
       <workItem from="1566089581336" duration="10181000" />
-      <workItem from="1566769334085" duration="8271000" />
+      <workItem from="1566769334085" duration="8388000" />
+      <workItem from="1567444229698" duration="9845000" />
+      <workItem from="1567569100101" duration="29000" />
     </task>
     <task id="LOCAL-00001" summary="update method core, not finish">
       <created>1565246629455</created>
@@ -198,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565789358565</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="route, code dinamic excecuted">
+      <created>1567459087791</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1567459087791</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,6 +219,7 @@
     <MESSAGE value="folder core create, refactor Model, Query and HasAttribute" />
     <MESSAGE value="adding include file" />
     <MESSAGE value="refactor class" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor class" />
+    <MESSAGE value="route, code dinamic excecuted" />
+    <option name="LAST_COMMIT_MESSAGE" value="route, code dinamic excecuted" />
   </component>
 </project>
