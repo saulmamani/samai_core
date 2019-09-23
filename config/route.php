@@ -3,38 +3,105 @@
 $server = $_SERVER["HTTP_HOST"];
 $document = $_SERVER["DOCUMENT_ROOT"];
 
-$rute = isset($_GET['rute']) ? $_GET['rute'] : 'error';
+$route = isset($_GET['route']) ? $_GET['route'] : 'error';
 
 $params = [];
-$url= explode("/", $rute)[0];
-$params= explode("/", $rute);
+$url = explode("/", $route)[0];
+$params = explode("/", $route);
+$request_type = $_SERVER['REQUEST_METHOD'];
 
-function open($ruta, $action)
+
+function get_values(array $request)
+{
+    $values = "";
+    foreach ($request as $key => $value) {
+        $values .= "'" . $key . "'=>'" . $value . "',";
+    }
+    return $values;
+}
+
+//function open($ruta, $action)
+//{
+//    $class = explode("@", $action)[0];
+//    $method = explode("@", $action)[1];
+//
+//    $request = get_values($_REQUEST);
+//
+//    $str = sprintf("(new %s())->%s([%s]);", $class, $method, $request);
+//    eval($str);
+//}
+
+$rutas = [];
+
+function get($ruta, $action)
 {
     $class = explode("@", $action)[0];
     $method = explode("@", $action)[1];
 
-    $str = sprintf("(new %s())->%s();", $class, $method);
-    echo $str;
-    eval($str);
+    $request = get_values($_REQUEST);
 
-//    (new UserController())->toList();
+    array_push($GLOBALS['rutas'], [$ruta, 'GET']);
 
-//    eval("$obj = new " . $class . "()");
-//    eval("$obj->". $method . "()");
+    //$str = sprintf("(new %s())->%s([%s]);", $class, $method, $request);
+    //eval($str);
+}
+function post($ruta, $action)
+{
+    $class = explode("@", $action)[0];
+    $method = explode("@", $action)[1];
+
+    $request = get_values($_REQUEST);
+
+    array_push($GLOBALS['rutas'], [$ruta, 'POST']);
+
+
+    //$str = sprintf("(new %s())->%s([%s]);", $class, $method, $request);
+    //eval($str);
+}
+function put($ruta, $action)
+{
+    $class = explode("@", $action)[0];
+    $method = explode("@", $action)[1];
+
+    $request = get_values($_REQUEST);
+
+    array_push($GLOBALS['rutas'], [$ruta, 'PUT']);
+
+
+    //$str = sprintf("(new %s())->%s([%s]);", $class, $method, $request);
+    //eval($str);
+}
+function delete($ruta, $action)
+{
+    $class = explode("@", $action)[0];
+    $method = explode("@", $action)[1];
+
+    $request = get_values($_REQUEST);
+
+    array_push($GLOBALS['rutas'], [$ruta, 'DELETE']);
+
+
+    //$str = sprintf("(new %s())->%s([%s]);", $class, $method, $request);
+    //eval($str);
 }
 
 switch ($url) {
     case 'users' :
-        /*$users = new UserController();
-        //redirect("users");
-        //include ("views/users/index.php");
-        $users->toList();*/
-        open('users', 'UserController@toList');
+//        if($request_type === 'GET')
+            get('users', 'UserController@toList');
+            get('users/{id}', 'UserController@getOne');
+//        if($request_type === 'POST')
+            post('users', 'UserController@store');
+//        if($request_type === 'PUT')
+            put('users/{id}', 'UserController@destroy');
+//        if($request_type === 'DELETE')
+            delete('users/{id}', 'UserController@udate');
+
+            print_r($rutas);
         break;
     case 'products' :
         $products = new ProductController();
-        include ("views/producs/index.php");
+        include("views/producs/index.php");
         break;
     default:
         redirect("404.php");

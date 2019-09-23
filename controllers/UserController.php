@@ -1,11 +1,14 @@
 <?php
 
+use http\Env\Request;
+
 class UserController
 {
-    public function toList()
+    public function toList($request = null)
     {
         $users = User::all();
         return Response::view('users/index.php', ['users' => $users]);
+//        return Response::json($users);
     }
 
     public function getOne($id)

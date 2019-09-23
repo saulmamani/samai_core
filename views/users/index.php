@@ -16,7 +16,7 @@
     </header>
     <div class="container">
         <?php
-            foreach ($data['users'] as $row)
+            foreach ($data->users as $row)
             {
                 print_r($row);
             }
